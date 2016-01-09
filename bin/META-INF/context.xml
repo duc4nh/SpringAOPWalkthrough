@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+	<aop:aspectj-autoproxy />
+	<!-- Tell Spring to scan for AOP annotations -->
+
+	<bean id="bookWriteCommand" class="com.fdmgroup.springaopwalkthrough.BookWriteCommand" />
+	<bean id="bookReadCommand" class="com.fdmgroup.springaopwalkthrough.BookReadCommand" />
+
+	<bean id="bookCatalogue" class="com.fdmgroup.springaopwalkthrough.BookCatalogue"></bean>
+	<bean id="catalogueLogger" class="com.fdmgroup.springaopwalkthrough.CatalogueLogger"></bean>
+</beans>
